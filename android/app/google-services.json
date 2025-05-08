@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "678422519746",
+    "project_id": "ldsw-37-integracion-bd",
+    "storage_bucket": "ldsw-37-integracion-bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678422519746:android:a88bb30fb86ec8f2ac405b",
+        "android_client_info": {
+          "package_name": "com.example.ldsw_3_7_integracion_bd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjIc-w5Ph9_9SfVMdAouWdpN-DjKtIw7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
