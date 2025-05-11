@@ -45,7 +45,7 @@ void _showAlert(BuildContext context, String title, String message) {
       actions: [
         TextButton(
           onPressed: () {
-            Navigator.of(dialogContext).pop(); // CIERRA el diálogo correctamente
+            Navigator.of(dialogContext).pop(); // cierra el diálogo
           },
           child: const Text('OK'),
         ),
@@ -70,7 +70,7 @@ void _showAlert(BuildContext context, String title, String message) {
         await FirebaseFirestore.instance.collection(collectionName).add(item);
       }
         setState(() {
-            status = 'Objeto JSON subido correctamente a Firestore.';
+            status = 'Datos del archivo JSON subidos correctamente a Firestore.';
           });
         _showAlert(context, 'Éxito', status);
 
@@ -127,14 +127,26 @@ void _showAlert(BuildContext context, String title, String message) {
     for (var doc in snapshot.docs) {
       await doc.reference.delete();
     }
-    _showAlert(context, 'Exito', 'Se borró la colección "multimedia".');
+    _showAlert(context, 'Exito', 'Se eliminaron todos los documentos de la colección <<multimedia>>. Cargue de nuevo el archivo JSON ubicado en el directorio assets/data.json');
   }
 
   // UI de la aplicación
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Carga de un archivo JSON a Firestore')),
+      // appBar: AppBar(title: Text('Carga de un archivo JSON a Firestore'))
+      appBar: AppBar(
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('Carga de un archivo JSON a Firestore'),
+            Text(
+              'En caso de borrar los documentos, el archivo JSON esta ubicado en el directorio assets/data.json',
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.normal),
+            ),
+          ],
+        ),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
